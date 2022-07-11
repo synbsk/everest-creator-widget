@@ -1,17 +1,17 @@
-//Get "Information Technology Services" Data
-var Information_Technology_Services = {
-    appName: "iknow.everestgroup",
-    reportName: "Reports_usage_data",
-    criteria: "(Service_Line == \"Information Technology Services\"",
-    page: 1,
-    pageSize: 100
-}
-ZOHO.CREATOR.API.getAllRecords(Information_Technology_Services).then(function (response) {
-    var recordArr = response.data;
-    for (var index in recordArr) {
-        console.log(recordArr[index]);
-    }
-});
+// //Get "Information Technology Services" Data
+// var Information_Technology_Services = {
+//     appName: "iknow.everestgroup",
+//     reportName: "Reports_usage_data",
+//     criteria: "(Service_Line == \"Information Technology Services\"",
+//     page: 1,
+//     pageSize: 100
+// }
+// ZOHO.CREATOR.API.getAllRecords(Information_Technology_Services).then(function (response) {
+//     var recordArr = response.data;
+//     for (var index in recordArr) {
+//         console.log(recordArr[index]);
+//     }
+// });
 //Get "Business Process Services" Data
 var Business_Process_Services = {
     appName: "iknow.everestgroup",
