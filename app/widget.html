@@ -3,71 +3,145 @@
 
 <head>
   <meta charset="UTF-8">
-  <script src="https://js.zohostatic.com/creator/widgets/version/1.0/widgetsdk-min.js"></script>
-  <script src="/app/js/app.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/app/css/custom.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://js.zohostatic.com/creator/widgets/version/1.0/widgetsdk-min.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-
-<body>
-  <h2>This is a Everest View</h2>
-  <ul class="nav nav-pills nav-fill">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Information Technology Services</a>
-      <script>
+  <script>
+    ZOHO.CREATOR.init()
+      .then(function (data) {
         //Get "Information Technology Services" Data
-        var Information_Technology_Services = {
-          appName: "iknow.everestgroup",
+        let Information_Technology_Services = {
+          appName: "test-app-sayan-basak",
           reportName: "Reports_usage_data",
           criteria: "(Service_Line == \"Information Technology Services\"",
           page: 1,
           pageSize: 100
         }
         ZOHO.CREATOR.API.getAllRecords(Information_Technology_Services).then(function (response) {
-          var recordArr = response.data;
-          for (var index in recordArr) {
-            console.log(recordArr[index]);
+          var Object, Information_Technology_Services_recordArr = response.data;
+          for (var index in Information_Technology_Services_recordArr) {
+            console.log(typeof Information_Technology_Services_recordArr[index]);
           }
         });
-      </script>
-      <div elName='zc-component' viewLinkName='Service_Line_Information_Technology_Services'
-        params='zc_Header=true&amp&zc_PrintRec=false&zc_DelRec=false&zc_AddRec=false&zc_DuplRec=false&Service_Line=Service_Line_Information_Technology_Services'>
-        Loading View...</div>
+        //Get "Business Process Services" Data
+        let Business_Process_Services = {
+          appName: "test-app-sayan-basak",
+          reportName: "Reports_usage_data",
+          criteria: "(Service_Line == \"Business Process Services\"",
+          page: 1,
+          pageSize: 100
+        }
+        ZOHO.CREATOR.API.getAllRecords(Business_Process_Services).then(function (response) {
+          var Object, Business_Process_Services_recordArr = response.data;
+          for (var index in Business_Process_Services_recordArr) {
+            console.log(typeof Business_Process_Services_recordArr[index]);
+          }
+        });
+        //Get "Global Sourcing" Data
+        let Global_Sourcing = {
+          appName: "test-app-sayan-basak",
+          reportName: "Reports_usage_data",
+          criteria: "(Service_Line == \"Global Sourcing\"",
+          page: 1,
+          pageSize: 100
+        }
+        ZOHO.CREATOR.API.getAllRecords(Global_Sourcing).then(function (response) {
+          var Object, Global_Sourcing_recordArr = response.data;
+          for (var index in Global_Sourcing_recordArr) {
+            console.log(typeof Global_Sourcing_recordArr[index]);
+          }
+        });
+        //Get "Information Technology Services/Business Process Services" Data
+        let Information_Technology_Services_Business_Process_Services = {
+          appName: "test-app-sayan-basak",
+          reportName: "Reports_usage_data",
+          criteria: "(Service_Line == \"Information Technology Services/Business Process Services\"",
+          page: 1,
+          pageSize: 100
+        }
+        ZOHO.CREATOR.API.getAllRecords(Information_Technology_Services_Business_Process_Services).then(function (response) {
+          var Object, Information_Technology_Services_Business_Process_Services_recordArr = response.data;
+          for (var index in Information_Technology_Services_Business_Process_Services_recordArr) {
+            console.log(typeof Information_Technology_Services_Business_Process_Services_recordArr[index]);
+          }
+        });
+        //Get "Other" Data
+        let Other = {
+          appName: "test-app-sayan-basak",
+          reportName: "Reports_usage_data",
+          criteria: "(Service_Line == \"Other\"",
+          page: 1,
+          pageSize: 100
+        }
+        ZOHO.CREATOR.API.getAllRecords(Other).then(function (response) {
+          var Object, Other_recordArr = response.data;
+          for (var index in Other_recordArr) {
+            console.log(typeof Other_recordArr[index]);
+          }
+        });
+      });
+  </script>
+</head>
 
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Business Process Services</a>
-      <div elName='zc-component' viewLinkName='Service_Line_Information_Technology_Services'
-        params='zc_Header=true&amp&zc_PrintRec=false&zc_DelRec=false&zc_AddRec=false&zc_DuplRec=false&Service_Line=Service_Line_Information_Technology_Services'>
-        Loading View...</div>
+<body>
+  <div class="container mt-2">
+    <h2>This is a Everest View</h2>
+    <nav>
+      <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+        <button class="nav-link active" id="nav-Information_Technology_Services-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-Information_Technology_Services" type="button" role="tab"
+          aria-controls="nav-Information_Technology_Services" aria-selected="true">Information Technology
+          Services</button>
 
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Global Sourcing</a>
-      <div elName='zc-component' viewLinkName='Service_Line_Information_Technology_Services'
-        params='zc_Header=true&amp&zc_PrintRec=false&zc_DelRec=false&zc_AddRec=false&zc_DuplRec=false&Service_Line=Service_Line_Information_Technology_Services'>
-        Loading View...</div>
+        <button class="nav-link" id="nav-Business_Process_Services-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-Business_Process_Services" type="button" role="tab"
+          aria-controls="nav-Business_Process_Services" aria-selected="false">Business Process Services</button>
 
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Information Technology Services/Business Process Services</a>
-      <div elName='zc-component' viewLinkName='Service_Line_Information_Technology_Services'
-        params='zc_Header=true&amp&zc_PrintRec=false&zc_DelRec=false&zc_AddRec=false&zc_DuplRec=false&Service_Line=Service_Line_Information_Technology_Services'>
-        Loading View...</div>
+        <button class="nav-link" id="nav-Global_Sourcing-tab" data-bs-toggle="tab" data-bs-target="#nav-Global_Sourcing"
+          type="button" role="tab" aria-controls="nav-Global_Sourcing" aria-selected="false">Global Sourcing</button>
 
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Other</a>
-      <div elName='zc-component' viewLinkName='Service_Line_Information_Technology_Services'
-        params='zc_Header=true&amp&zc_PrintRec=false&zc_DelRec=false&zc_AddRec=false&zc_DuplRec=false&Service_Line=Service_Line_Information_Technology_Services'>
-        Loading View...</div>
+        <button class="nav-link" id="nav-Information_Technology_Services_Business_Process_Services-tab"
+          data-bs-toggle="tab" data-bs-target="#nav-Information_Technology_Services_Business_Process_Services"
+          type="button" role="tab" aria-controls="nav-Information_Technology_Services_Business_Process_Services"
+          aria-selected="false">Information Technology Services/Business Process Services</button>
 
-    </li>
-  </ul>
+        <button class="nav-link" id="nav-Other-tab" data-bs-toggle="tab" data-bs-target="#nav-Other" type="button"
+          role="tab" aria-controls="nav-Other" aria-selected="false">Other</button>
+    </nav>
+
+
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-Information_Technology_Services" role="tabpanel"
+        aria-labelledby="nav-Information_Technology_Services-tab" tabindex="0">
+        Information Technology Services
+        <script>
+          StringReportValue = "Information Technology Services";
+        </script>
+        <div elName='zc-component' viewLinkName='Reports_usage_data'
+          params='zc_Header=true&amp&zc_PrintRec=false&zc_DelRec=false&zc_AddRec=false&zc_DuplRec=false&Service_Line='
+          +StringReportValue+'>Loading View...</div>
+      </div>
+
+      <div class="tab-pane fade" id="nav-Business_Process_Services" role="tabpanel"
+        aria-labelledby="nav-Business_Process_Services-tab" tabindex="0">Business
+        Process Services</div>
+
+      <div class="tab-pane fade" id="nav-Global_Sourcing" role="tabpanel" aria-labelledby="nav-Global_Sourcing-tab"
+        tabindex="0">Global
+        Sourcing</div>
+
+      <div class="tab-pane fade" id="nav-Information_Technology_Services_Business_Process_Services" role="tabpanel"
+        aria-labelledby="nav-Information_Technology_Services_Business_Process_Services-tab" tabindex="0">Information
+        Technology Services/Business Process Services</div>
+
+      <div class="tab-pane fade" id="nav-Other" role="tabpanel" aria-labelledby="nav-Other-tab" tabindex="0">Other</div>
+    </div>
+  </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
